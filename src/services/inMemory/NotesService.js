@@ -23,6 +23,7 @@ class NotesService {
     if (!isSuccess) {
       throw new InvariantError('Catatan gagal ditambahkan');
     }
+
     return id;
   }
 
@@ -44,6 +45,7 @@ class NotesService {
     if (index === -1) {
       throw new NotFoundError('Gagal memperbarui catatan. Id tidak ditemukan');
     }
+
     const updatedAt = new Date().toISOString();
 
     this._notes[index] = {
@@ -63,4 +65,5 @@ class NotesService {
     this._notes.splice(index, 1);
   }
 }
+
 module.exports = NotesService;
